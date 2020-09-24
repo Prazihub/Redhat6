@@ -1,0 +1,23 @@
+RPM (Redhat Package Manger)
+
+ rpm Queries
+ 
+ Syntax:
+		 rpm -q what_packages what_information
+Installed Package Options:
+		rpm -qa lists installed packages
+		rpm -qf filename shows owning package
+		rpm -qi package_name general information
+		rpm -ql package_name lists files in package
+
+Uninstalled Package Options:
+		rpm -qip package_file.i386.rpm
+		rpm -qlp package_file.i686.rpm
+
+Installed RPM File Verification:
+		rpm -V <package_name>
+		rpm -Vp <package_file>.i386.rpm
+		rpm -Va
+    
+    
+  
