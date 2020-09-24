@@ -1,0 +1,40 @@
+NFS Files and Configuration
+
+Command:
+ showmount
+ exportfs
+
+Server Side:
+
+Step 1: Install Package
+		[root@dlp ~]# yum -y install nfs-utils # install
+    
+Step 2: Define NFS Share
+	[root@dlp ~]# vi /etc/exports
+	/home 10.0.0.0/24(rw,sync,no_root_squash,no_all_squash)
+	Or
+	/data2 *(rw,sync)
+  
+Step 3: Start NFS services
+	#service nfs start/stop/restart/status
+  
+Step 4: Check/list NFS shares
+	#showmount -e localhost
+ 
+ Edit the files 
+  
+  [root@dlp ~]# vi /etc/exports 
+	# write like below *note
+  /home 10.0.0.0/24(rw,sync,no_root_squash,no_all_squash) 
+	# *note/home ⇒ shared directory10.0.0.0/24 ⇒ range of networks NFS permits accesses
+
+Client Side:
+
+Step 1: List NFS share available in NFS server
+		#showmount -e nfs_server
+    
+Step 2: Mount NFS Share
+		#mount nfs_server:<share> /mnt
+    
+    
+
