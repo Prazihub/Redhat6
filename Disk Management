@@ -1,0 +1,52 @@
+PV commands
+
+#pvdisplay  - display information
+#pvs - display information
+#pvscan - scans for disks for non-LVM and LVM disks 
+#pvcreate  - Create physical volume
+#pvremove - remove physical volume
+#pvck - check the consistency of the LVM metadata 
+#pvchange - Enable or Disable PV
+#pvmove  - move data from harddisk to second disk
+
+VG commands
+
+#vgdisplay - display information
+#vgs - display information
+#vgscan - scanning
+#vgcreate - create volume group
+#vgremove - remove volume group
+#vgreduce - reduce volume group / removing disk from VG
+#vgchk - check the consistency of the LVM metadata 
+#vgchange - Enable or Disable VG
+#vgrename - rename VG
+#vgconvert  - convert LVM1 to LVM2
+#vgexport
+#vgimport
+#vgcfgbackup - the backup is written in plain text and are by default located in /etc/lvm/backup 
+
+LV commands
+
+#lvdisplay  - display information
+#lvs - display information
+#lvscan - scans for lvs 
+#lvcreate  - Create logical volume
+#lvremove - remove logical volume
+#lvextend - extend LV
+#lvreduce - reduce LV
+#lvrename - rename LV
+
+Directories and Files
+
+## Directories
+/etc/lvm                    - default lvm directory location 
+/etc/lvm/backup         - where the automatic backups go 
+/etc/lvm/cache          - persistent filter cache 
+/etc/lvm/archive        - where automatic archives go after a volume group change 
+/var/lock/lvm             - lock files to prevent metadata corruption 
+
+# Files 
+/etc/lvm/lvm.conf       - main lvm configuration file 
+$HOME/.lvm               - lvm history
+
+
