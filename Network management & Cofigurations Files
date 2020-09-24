@@ -1,0 +1,49 @@
+How to set hostname:
+ #hostaname new_hostname (Tempravery creation)
+ Vi /etc/sysconfig/network (Permanent hostname change)
+		NETWORKING=yes
+		HOSTNAME=server-world
+    
+How to set local hostname resolution:
+	vi /etc/hosts
+		192.168.1.100 server-world
+
+Configuration files
+
+/etc/sysconfig/network-scripts/ifcfg-eth0
+/etc/sysconfig/network
+/etc/hosts
+/etc/resolv.conf
+/etc/sysconfig/network-scripts/route-eth0
+/etc/modprobe.conf
+/etc/sysconfig/network-scripts/ifcfg-eth0
+/proc/net/bonding/bond0
+
+ip - commands
+
+		#ip addr add 192.168.50.5 dev eth1
+		 # ip addr show
+		 # ip addr del 192.168.50.5/24 dev eth1
+		 # ip link set eth1 up
+		 # ip link set eth1 down
+
+
+ifconfig - commands
+
+		 # ifconfig eth0 192.168.1.100 netmask 255.255.255.0 up
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
