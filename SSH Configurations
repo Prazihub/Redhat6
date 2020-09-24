@@ -1,0 +1,55 @@
+SSH Configuration
+
+Step1: Install SSH package (This package default with OS installation)
+
+		#rpm -qi openssh-server
+
+Step2: Edit configuration file
+
+		#/etc/ssh/sshd_config
+
+Step3: Start SSHD service
+
+		#service sshd start
+    
+ Edit the sshd_config file, vi /etc/ssh/sshd_config and add/or change, if necessary, the following parameters
+   This is ssh server systemwide configuration file.
+
+          Port 22
+          ListenAddress 192.168.1.1
+          HostKey /etc/ssh/ssh_host_key
+          ServerKeyBits 1024
+          LoginGraceTime 600
+          KeyRegenerationInterval 3600
+          PermitRootLogin no
+          IgnoreRhosts yes
+          IgnoreUserKnownHosts yes
+          X11Forwarding no
+          PasswordAuthentication yes
+          PermitEmptyPasswords no
+
+Following are options for LINUX to LINUX SSH connection
+
+1. SSH Client Version:
+
+#ssh -V
+OpenSSH_3.9p1, OpenSSL 0.9.7a Feb 19 2003
+
+
+2. Login to remote host:
+
+#ssh -l jsmith remotehost.example.com
+
+
+3. File transfer to/from remote host:
+
+#scp jsmith@remotehost.example.com:/home/jsmith/remotehostfile.txt remotehostfile.txt
+
+
+#scp localhostfile.txt jsmith@remotehost.example.com:/home/jsmith/localhostfile.txt
+
+
+4. Debug SSH Client: 
+
+# ssh -v -l jsmith remotehost.example.com 
+
