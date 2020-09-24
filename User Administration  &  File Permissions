@@ -1,0 +1,57 @@
+Creating user account :
+ 
+ The command to create user account is useradd.
+	For Example:
+		Useradd user_name(user1)
+
+	The user account is now created . the user account record will be in the file /etc/passwd as below
+	user1:x:500:500::/home/user1:/bin/bash
+
+	username:Passwd(encrypted):userid:groupid:commands:homedirectory:shellfor the user
+  
+Setting Password: 
+	The command passwd will be used to set password for any user. The same command will change the passwd of this user.
+Command: Passwd User_name
+
+Modifying the user account:
+The command used to modify user parameters is usermod
+For example:
+  
+Change the userid
+ usermod –u changeuserid username
+		
+Change the group	
+  usermod -g changegroupname username
+
+Change the home directoy
+	usermod -d changehomedirctory username
+    
+Deleting user account:
+	command: userdel
+
+Creating group accounts:
+	groupadd group_name
+
+Modifying group accounts:
+	groupmod old_name new_name
+
+Deleting group accounts:
+	groupdel group_name
+  
+Configurations files
+  
+ Authentication information is stored in plain text files:
+
+	/etc/passwd
+	/etc/shadow
+	/etc/group
+	/etc/gshadow
+
+
+
+
+
+
+
+
+
