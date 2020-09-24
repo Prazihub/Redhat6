@@ -1,0 +1,61 @@
+YUM (Yellow Dog Update)
+
+YUM Setup (Server Side)
+
+Step1: Copy DVD content into local directory
+
+  From DVD copy everything to HDD under /var/ftp/pub
+		cp -rvf /location-of-DVD/* /var/ftp/pub/
+
+Step2: Install required packages using RPM command
+
+		cd /var/ftp/pub/Server
+		#rpm -ivh createrepo-o.... .rpm
+		#rpm -ivh vsftp.2.0.... .rpm
+
+Step3: Creating Respository
+
+		#createrepo -v /var/ftp/pub/Server
+    
+Step4: Stop firewall & Selinux
+
+		#service iptables stop
+		#chkconfig iptable off
+		#setenfore 0
+		#edit /etc/selinux/config
+
+Step5: Enable FTP services for anonymous users
+
+		Edit /etc/vsftpd/vsftpd.conf
+		anonymous_enable=YES
+    
+Step4: Stop firewall & Selinux
+
+		#service iptables stop
+		#chkconfig iptable off
+		#setenfore 0
+		#edit /etc/selinux/config
+
+Step5: Enable FTP services for anonymous users
+
+		Edit /etc/vsftpd/vsftpd.conf
+		anonymous_enable=YES
+    
+ YUM Setup (Client side)
+ 
+Step1:
+
+	vi /etc/yum.repos.d/ser.repo 
+		[Server]
+		name=My Local Server Repo
+		baseurl=file:///var/ftp/pub/Server
+		#baseurl=ftp://192.168.0.254/pub/Server
+		gpgcheck=0
+
+Step2:
+
+	yum clean all
+	yum list all
+	yum install <package name>
+	yum remove <package name>
+
