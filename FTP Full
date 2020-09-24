@@ -1,0 +1,70 @@
+VSFTP Configuration
+
+Package: vsftpd
+
+Daemon: /usr/sbin/vsftpd
+
+Stop & Start Procedures:
+		#service vsftpd stop/start/restart/status
+
+Ports 21 (ftp control channel) All commands user send and the ftp server’s responses will go over the control connection,but any data sent back will go over the data connection.
+
+Ports 20 (ftp-data) This port is used for all subsequent data transfers between the client and servers.
+
+Configuration: /etc/vsftpd/vsftpd.conf/
+
+Restriction: 
+/etc/vsftpd/ftpusers 
+/etc/vsftpd/user_list
+
+
+Log: /var/log/xferlog
+
+Configure VSFTP
+
+Step 1: Install vsftpd package
+
+	#rpm -ivh vsftpd*
+	Or
+	#yum install vsftpd
+
+Step 2: Edit configuration files, if required
+
+	vi /etc/vsftpd/vsftpd.conf/
+	vi /etc/vsftpd/ftpusers 
+	vi /etc/vsftpd/user_list
+
+Step 3: Start VSFTPD service
+
+	#service vsftpd start
+
+FTP Commands
+
+ftp abc.xyz.edu
+<username & password>
+
+ftp> help
+
+ftp> ls
+
+ftp> cd customers
+
+ftp> lcd images
+
+ftp> binary
+
+ftp> hash
+
+ftp> get testfile.txt
+
+ftp> put testfile1.txt
+
+ftp> mget *.txt
+
+ftp> mput *.jpg
+
+ftp> bye
+
+
+
+
