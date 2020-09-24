@@ -1,0 +1,29 @@
+Samba
+
+Starting the samba service:
+	#service smb start
+  
+Setting samba Passwd to the users:
+	#smbpasswd –a user1
+  
+Setting samba passwd( if needed)
+	#smbpasswd –n user1
+  
+Deleting users in samba(if needed)
+	#smbpasswd –x user1
+
+Configuration files:
+	vi /etc/samba/smb.conf
+		[ram]
+			comment = user1s home directory
+			Path = /home/user1
+			Valid users = users1 users2
+			Public = no
+			Writable = yes
+			Printable = no
+			create mask = 0777
+
+
+
+
+
